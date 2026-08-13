@@ -1,36 +1,24 @@
-# 🚀 Scalable Data Extraction, Cleaning & NLP Pipeline
+# 🚀 Scalable Data Extraction & Cleaning Pipeline
 
-An end-to-end Python data pipeline designed to ingest raw data, execute dynamic data sanitization at scale using memory-efficient chunking, and perform automated NLP Sentiment Analysis on customer feedback.
-
----
+A memory-efficient Python ETL pipeline designed to ingest raw CSV data, perform automated sanitization (trimming whitespace, coercing types, imputing missing values, regex validation), and scale seamlessly across multi-gigabyte files using Pandas chunking.
 
 ## 🌟 Key Features
-- **Scalable Data Ingestion:** Processes multi-gigabyte CSV datasets in configurable batches (`chunksize`) using Pandas to avoid memory (`MemoryError`) crashes.
-- **Automated Data Sanitization:** Strips leading/trailing whitespace, standardizes text casing, enforces correct data types, and imputes missing numeric values.
-- **Regex Validation:** Uses Regular Expressions to detect malformed data entries (such as email syntax validation).
-- **AI/NLP Sentiment Analysis:** Employs Natural Language Processing (`TextBlob`) to score text polarity and classify reviews into Positive, Negative, or Neutral sentiment categories.
-
----
+- **Memory-Efficient Processing:** Employs chunking (`chunksize`) to process massive files without exceeding RAM limits.
+- **Data Sanitization & Cleaning:** Standardizes text formatting, converts data types, and imputes missing numeric values.
+- **Regex Validation:** Detects malformed email entries using Regular Expressions.
 
 ## 🛠️ Tech Stack
 - **Language:** Python 3.x
-- **Data Processing:** Pandas, RegEx, OS
-- **AI / NLP:** TextBlob
-
----
+- **Data Engineering:** Pandas, RegEx, OS
 
 ## 📁 Repository Structure
-
 ```text
-data-cleaning-nlp-pipeline/
+Project_1_Data_Cleaning/
 │
 ├── data/
-│   ├── raw_data.csv             # Sample raw dataset
-│   └── cleaned_data.csv         # Processed clean output dataset
-│
+│   ├── raw_data.csv             # Sample raw input data
+│   └── cleaned_data.csv         # Sanitized output data
 ├── src/
-│   ├── clean_pipeline.py        # Scalable Data Cleaning Pipeline
-│   └── sentiment_analysis.py    # AI / NLP Sentiment Analysis Script
-│
-├── requirements.txt             # Dependencies
-└── README.md                    # Project documentations
+│   └── clean_pipeline.py        # Core ETL cleaning script
+├── requirements.txt
+└── README.md
